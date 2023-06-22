@@ -399,13 +399,13 @@ bj2phi.Draw("SAME");
 
 c6->Update();
 
-c1->SaveAs("histograms1.pdf"); 
-c2->SaveAs("histograms2.pdf"); 
-c3->SaveAs("histograms3.pdf"); 
-c4->SaveAs("histograms4.pdf"); 
-c5->SaveAs("histograms5.pdf"); 
-c6->SaveAs("histograms6.pdf"); 
-  
+//saving as pdf
+c1->SaveAs("Atlashistogram.pdf(","pdf"); 
+c2->SaveAs("Atlashistogram.pdf"); 
+c3->SaveAs("Atlashistogram.pdf"); 
+c4->SaveAs("Atlashistogram.pdf"); 
+c5->SaveAs("Atlashistogram.pdf"); 
+c6->SaveAs("Atlashistogram.pdf)","pdf"); 
 
 
 
