@@ -232,172 +232,300 @@ while (1){
 std::vector<TCanvas*> canvases;
 //Drawing histograms
 // Create the first canvas
+gStyle->SetOptStat();
+
+THStack hs1("hs1","Z1mass");
 TCanvas *c1 = new TCanvas("c1", "c1", 800, 800);
 c1->Divide(2, 2);
 
 c1->cd(1);
 sZ1mass.SetLineColor(kBlue);
 bZ1mass.SetLineColor(kRed);
-sZ1mass.Draw();
-bZ1mass.Draw("SAME");
+hs1.Add(&sZ1mass);
+hs1.Add(&bZ1mass);
+hs1.Draw("nostack");
 
+THStack hs2("hs2","Z2mass");
 c1->cd(2);
 sZ2mass.SetLineColor(kBlue);
 bZ2mass.SetLineColor(kRed);
-sZ2mass.Draw();
-bZ2mass.Draw("SAME");
+hs2.Add(&sZ2mass);
+hs2.Add(&bZ2mass);
+hs2.Draw("nostack");
 
+THStack hs3("hs3","mass4l");
 c1->cd(3);
 smass4l.SetLineColor(kBlue);
 bmass4l.SetLineColor(kRed);
-smass4l.Draw();
-bmass4l.Draw("SAME");
+hs3.Add(&smass4l);
+hs3.Add(&bmass4l);
+hs3.Draw("nostack");
 
+THStack hs4("hs4","detajj");
 c1->cd(4);
 sdetajj.SetLineColor(kBlue);
 bdetajj.SetLineColor(kRed);
-sdetajj.Draw();
-bdetajj.Draw("SAME");
+hs4.Add(&sdetajj);
+hs4.Add(&bdetajj);
+hs4.Draw("nostack");
 
 c1->Update();
+canvases.push_back(c1);
  
 // Create the second canvas
+THStack hs5("hs5","massjj");
 TCanvas *c2 = new TCanvas("c2", "c2", 800, 800);
 c2->Divide(2, 2);
 
 c2->cd(1);
 smassjj.SetLineColor(kBlue);
 bmassjj.SetLineColor(kRed);
-smassjj.Draw();
-bmassjj.Draw("SAME");
+hs5.Add(&smassjj);
+hs5.Add(&bmassjj);
+hs5.Draw("nostack");
 
+THStack hs6("hs6","l1pdgid");
 c2->cd(2);
 sl1pdgid.SetLineColor(kBlue);
 bl1pdgid.SetLineColor(kRed);
-sl1pdgid.Draw();
-bl1pdgid.Draw("SAME");
+hs6.Add(&sl1pdgid);
+hs6.Add(&bl1pdgid);
+hs6.Draw("nostack");
 
+THStack hs7("hs7","l1pt");
 c2->cd(3);
 sl1pt.SetLineColor(kBlue);
 bl1pt.SetLineColor(kRed);
-sl1pt.Draw();
-bl1pt.Draw("SAME");
+hs7.Add(&sl1pt);
+hs7.Add(&bl1pt);
+hs7.Draw("nostack");
 
+THStack hs8("hs8","l1eta");
 c2->cd(4);
 sl1eta.SetLineColor(kBlue);
 bl1eta.SetLineColor(kRed);
-sl1eta.Draw();
-bl1eta.Draw("SAME");
+hs8.Add(&sl1eta);
+hs8.Add(&bl1eta);
+hs8.Draw("nostack");
 
 c2->Update();
+canvases.push_back(c2);
 
 // Create the third canvas
+THStack hs9("hs9","l1phi");
 TCanvas *c3 = new TCanvas("c3", "c3", 800, 800);
 c3->Divide(2, 2);
 
 c3->cd(1);
 sl1phi.SetLineColor(kBlue);
 bl1phi.SetLineColor(kRed);
-sl1phi.Draw();
-bl1phi.Draw("SAME");
+hs9.Add(&sl1phi);
+hs9.Add(&bl1phi);
+hs9.Draw("nostack");
 
+THStack hs10("hs10","l2pdgid");
 c3->cd(2);
 sl2pdgid.SetLineColor(kBlue);
 bl2pdgid.SetLineColor(kRed);
-sl2pdgid.Draw();
-bl2pdgid.Draw("SAME");
+hs10.Add(&sl2pdgid);
+hs10.Add(&bl2pdgid);
+hs10.Draw("nostack");
 
+THStack hs11("hs11","l2pt");
 c3->cd(3);
 sl2pt.SetLineColor(kBlue);
 bl2pt.SetLineColor(kRed);
-sl2pt.Draw();
-bl2pt.Draw("SAME");
+hs11.Add(&sl2pt);
+hs11.Add(&bl2pt);
+hs11.Draw("nostack");
 
+THStack hs12("hs12","l2eta");
 c3->cd(4);
 sl2eta.SetLineColor(kBlue);
 bl2eta.SetLineColor(kRed);
-sl2eta.Draw();
-bl2eta.Draw("SAME");
+hs12.Add(&sl2eta);
+hs12.Add(&bl2eta);
+hs12.Draw("nostack");
 
 c3->Update();
+canvases.push_back(c3);
 
 // Create the fourth canvas
+THStack hs13("hs13","l2phi");
 TCanvas *c4 = new TCanvas("c4", "c4", 800, 800);
 c4->Divide(2, 2);
 
 c4->cd(1);
 sl2phi.SetLineColor(kBlue);
 bl2phi.SetLineColor(kRed);
-sl2phi.Draw();
-bl2phi.Draw("SAME");
+hs13.Add(&sl2phi);
+hs13.Add(&bl2phi);
+hs13.Draw("nostack");
 
+THStack hs14("hs14","l3pdgid");
 c4->cd(2);
 sl3pdgid.SetLineColor(kBlue);
 bl3pdgid.SetLineColor(kRed);
-sl3pdgid.Draw();
-bl3pdgid.Draw("SAME");
+hs14.Add(&sl3pdgid);
+hs14.Add(&bl3pdgid);
+hs14.Draw("nostack");
+
+THStack hs15("hs15","l3pt");
+c4->cd(3);
+sl3pt.SetLineColor(kBlue);
+bl3pt.SetLineColor(kRed);
+hs15.Add(&sl3pt);
+hs15.Add(&bl3pt);
+hs15.Draw("nostack");
+
+THStack hs16("hs16","l3eta");
+c4->cd(4);
+sl3eta.SetLineColor(kBlue);
+bl3eta.SetLineColor(kRed);
+hs16.Add(&sl3eta);
+hs16.Add(&bl3eta);
+hs16.Draw("nostack");
 
 c4->Update();
+canvases.push_back(c4);
  
-// Create canvas 5
+// Create the fifth canvas
+THStack hs17("hs17","l3phi");
 TCanvas *c5 = new TCanvas("c5", "c5", 800, 800);
 c5->Divide(2, 2);
 
 c5->cd(1);
 sl3phi.SetLineColor(kBlue);
 bl3phi.SetLineColor(kRed);
-sl3phi.Draw();
-bl3phi.Draw("SAME");
+hs17.Add(&sl3phi);
+hs17.Add(&bl3phi);
+hs17.Draw("nostack");
 
+
+THStack hs18("hs18","l4pdgid");
 c5->cd(2);
+sl4pdgid.SetLineColor(kBlue);
+bl4pdgid.SetLineColor(kRed);
+hs18.Add(&sl4pdgid);
+hs18.Add(&bl4pdgid);
+hs18.Draw("nostack");
 
-
+THStack hs19("hs19","l4pt");
 c5->cd(3);
-sj1pt.SetLineColor(kBlue);
-bj1pt.SetLineColor(kRed);
-sj1pt.Draw();
-bj1pt.Draw("SAME");
+sl4pt.SetLineColor(kBlue);
+bl4pt.SetLineColor(kRed);
+hs19.Add(&sl4pt);
+hs19.Add(&bl4pt);
+hs19.Draw("nostack");
 
+THStack hs20("hs20","l4eta");
 c5->cd(4);
-sj1eta.SetLineColor(kBlue);
-bj1eta.SetLineColor(kRed);
-sj1eta.Draw();
-bj1eta.Draw("SAME");
+sl4eta.SetLineColor(kBlue);
+bl4eta.SetLineColor(kRed);
+hs20.Add(&sl4eta);
+hs20.Add(&bl4eta);
+hs20.Draw("nostack");
 
 c5->Update();
+canvases.push_back(c5);
 
-// Create canvas 6
+
+
+//jet
+THStack hs21("hs21","l4phi");
 TCanvas *c6 = new TCanvas("c6", "c6", 800, 800);
 c6->Divide(2, 2);
-
 c6->cd(1);
+sl4phi.SetLineColor(kBlue);
+bl4phi.SetLineColor(kRed);
+hs21.Add(&sl4phi);
+hs21.Add(&bl4phi);
+hs21.Draw("nostack");
+
+THStack hs22("hs22","j1pt");
+c6->cd(2);
+sj1pt.SetLineColor(kBlue);
+bj1pt.SetLineColor(kRed);
+hs22.Add(&sj1pt);
+hs22.Add(&bj1pt);
+hs22.Draw("nostack");
+
+THStack hs23("hs23","j1eta");
+c6->cd(3);
+sj1eta.SetLineColor(kBlue);
+bj1eta.SetLineColor(kRed);
+hs23.Add(&sj1eta);
+hs23.Add(&bj1eta);
+hs23.Draw("nostack");
+
+THStack hs24("hs24","j1phi");
+c6->cd(4);
 sj1phi.SetLineColor(kBlue);
 bj1phi.SetLineColor(kRed);
-sj1phi.Draw();
-bj1phi.Draw("SAME");
-
-c6->cd(2);
-sj2pt.SetLineColor(kBlue);
-bj2pt.SetLineColor(kRed);
-sj2pt.Draw();
-bj2pt.Draw("SAME");
+hs24.Add(&sj1phi);
+hs24.Add(&bj1phi);
+hs24.Draw("nostack");
 
 
-c6->cd(3);
-
-sj2eta.SetLineColor(kBlue);
-bj2eta.SetLineColor(kRed);
-sj2eta.Draw();
-bj2eta.Draw("SAME");
-
-c6->cd(4);
-
-sj2phi.SetLineColor(kBlue);
-bj2phi.SetLineColor(kRed);
-sj2phi.Draw();
-bj2phi.Draw("SAME");
 
 c6->Update();
+canvases.push_back(c6);
+
+// Create the sixth canvas
+THStack hs25("hs25","j1E");
+TCanvas *c7 = new TCanvas("c7", "c7", 800, 800);
+c7->Divide(2, 2);
+c7->cd(1);
+sj1E.SetLineColor(kBlue);
+bj1E.SetLineColor(kRed);
+hs25.Add(&sj1phi);
+hs25.Add(&bj1phi);
+hs25.Draw("nostack");
+
+
+THStack hs26("hs26","j2pt");
+c7->cd(2);
+sj2pt.SetLineColor(kBlue);
+bj2pt.SetLineColor(kRed);
+hs26.Add(&sj2pt);
+hs26.Add(&bj2pt);
+hs26.Draw("nostack");
+
+THStack hs27("hs27","j2eta");
+c7->cd(3);
+sj2eta.SetLineColor(kBlue);
+bj2eta.SetLineColor(kRed);
+hs27.Add(&sj2eta);
+hs27.Add(&bj2eta);
+hs27.Draw("nostack");
+
+
+THStack hs28("hs28","j2phi");
+c7->cd(4);
+sj2phi.SetLineColor(kBlue);
+bj2phi.SetLineColor(kRed);
+hs28.Add(&sj2phi);
+hs28.Add(&bj2phi);
+hs28.Draw("nostack");
+
+
+c7->Update();
+canvases.push_back(c7);
+
+
+THStack hs29("hs29","j2E");
+TCanvas *c8 = new TCanvas("c8", "c8", 800, 800);
+c8->cd(1);
+sj2E.SetLineColor(kBlue);
+bj2E.SetLineColor(kRed);
+hs29.Add(&sj2E);
+hs29.Add(&bj2E);
+hs29.Draw("nostack");
+
+
+c8->Update();
+canvases.push_back(c8);
+
 
 //saving as pdf
 c1->SaveAs("Atlashistogram.pdf(","pdf"); 
@@ -405,7 +533,10 @@ c2->SaveAs("Atlashistogram.pdf");
 c3->SaveAs("Atlashistogram.pdf"); 
 c4->SaveAs("Atlashistogram.pdf"); 
 c5->SaveAs("Atlashistogram.pdf"); 
-c6->SaveAs("Atlashistogram.pdf)","pdf"); 
+c6->SaveAs("Atlashistogram.pdf"); 
+c7->SaveAs("Atlashistogram.pdf"); 
+c8->SaveAs("Atlashistogram.pdf)","pdf"); 
+
 
 
 
